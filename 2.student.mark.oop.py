@@ -47,6 +47,7 @@ class Classroom:
 # list marks
     def print_marks(self):
         course_id = input("Enter the ID of the course: ")
+
         while course_id not in [c.course_id for c in self.courses]:
             print("Invalid ID course. Please try again")
             course_id = input("Enter the ID of the course: ")
@@ -54,6 +55,10 @@ class Classroom:
         for course in self.courses:
             if course.course_id == course_id:
                 print("----------------------------------------------")
+
+        for course in self.courses:
+            if course.course_id == course_id:
+
                 print(f"List of marks for course {course.name} (ID: {course.course_id}):")
         for student in self.students:
             mark = student.get_mark(course.course_id)
@@ -61,13 +66,16 @@ class Classroom:
 
 # list information of students
     def print_students(self):
+
         print("----------------------------------------------")
+
         print("List of students: ")
         for student in self.students:
             print(f"Name: {student.name}, ID: {student.student_id}, Date of birth: {student.date_of_birth}")
 
 # list information of courses
     def print_courses(self):
+
         print("----------------------------------------------")
         print("List of courses: ")
         for course in self.courses:
