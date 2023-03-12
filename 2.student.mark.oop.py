@@ -5,8 +5,8 @@ class Student:
         self.date_of_birth = date_of_birth
         self.marks = {}
 
-    def add_mark(self, course, mark):
-        self.marks[course.course_id] = mark
+    def add_mark(self, course_id, mark):
+        self.marks[course_id] = mark
 
     def get_mark(self, course_id):
         return self.marks.get(course_id, 0)
@@ -27,38 +27,6 @@ class Classroom:
     def add_course(self, course):
         self.courses.append(course)
 
-# add marks for students in the courses
-    def input_marks(self):
-        course_id = input("Enter the ID of the course: ")        
-        while course_id not in [c.course_id for c in self.courses]:
-            print("Invalid ID course. Please try again")
-            course_id = input("Enter the ID of the course: ")
-
-        for course in self.courses:
-            if course.course_id == course_id:
-                print("----------------------------------------------")
-                print(f"Input marks for course {course.name} (ID: {course.course_id}):")
-                for student in self.students:
-                    mark = int(input(f"Enter mark for {student.name} (ID: {student.student_id}): "))
-                    while mark < 0 or mark > 20:
-                        mark = int(input("Invalid marks entered! Please enter a marks from 0 and 20: "))
-                    student.add_mark(course, mark)
-
-# list marks
-    def print_marks(self):
-        course_id = input("Enter the ID of the course: ")
-        while course_id not in [c.course_id for c in self.courses]:
-            print("Invalid ID course. Please try again")
-            course_id = input("Enter the ID of the course: ")
-
-        for course in self.courses:
-            if course.course_id == course_id:
-                print("----------------------------------------------")
-                print(f"List of marks for course {course.name} (ID: {course.course_id}):")
-        for student in self.students:
-            mark = student.get_mark(course.course_id)
-            print(f"{student.name} (ID: {student.student_id}) - Mark: {mark}")
-
 # list information of students
     def print_students(self):
         print("----------------------------------------------")
@@ -72,6 +40,38 @@ class Classroom:
         print("List of courses: ")
         for course in self.courses:
             print(f"Course name: {course.name}, ID: {course.course_id}")
+
+# add marks for students in the courses
+    def input_marks(self):
+        course_id = input("Enter the ID of the course: ")        
+        while course_id not in [c.course_id for c in self.courses]:
+            print("Invalid ID course. Please try again")        #loop to re-input id
+            course_id = input("Enter the ID of the course: ")
+
+        for course in self.courses:
+            if course.course_id == course_id:
+                print("----------------------------------------------")
+                print(f"Input marks for course {course.name} (ID: {course.course_id}):")
+                for student in self.students:
+                    mark = int(input(f"Enter mark for {student.name} (ID: {student.student_id}): "))
+                    while mark < 0 or mark > 20:
+                        mark = int(input("Invalid marks entered! Please enter a marks from 0 and 20: "))
+                    student.add_mark(course_id, mark)
+                
+# list marks of each courses
+    def print_marks(self):
+        course_id = input("Enter the ID of the course: ")
+        while course_id not in [c.course_id for c in self.courses]:
+            print("Invalid ID course. Please try again")        #loop to re-input id
+            course_id = input("Enter the ID of the course: ")
+
+        for course in self.courses:
+            if course.course_id == course_id:
+                print("----------------------------------------------")
+                print(f"List of marks for course {course.name} (ID: {course.course_id}):")
+        for student in self.students:
+            mark = student.get_mark(course_id)
+            print(f"{student.name} (ID: {student.student_id}) - Mark: {mark}")
 
 classroom = Classroom()
 
