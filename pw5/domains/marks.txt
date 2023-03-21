@@ -1,2 +1,6 @@
-Course name: ads, ID: 1
-Student name: trong,ID: 449,Mark: 10.0
+Course name: ADS, ID: A01
+Student name: TRONG,ID: 449,Mark: 15.0
+Student name: LONG,ID: 999,Mark: 16.0
+Course name: OOP, ID: A02
+Student name: TRONG,ID: 449,Mark: 17.0
+Student name: LONG,ID: 999,Mark: 18.0
