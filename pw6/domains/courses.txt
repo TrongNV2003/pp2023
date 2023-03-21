@@ -1,0 +1,2 @@
+Course name: OOP,ID: 1,Credit: 3
+Course name: ADS,ID: 2,Credit: 5

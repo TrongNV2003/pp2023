@@ -1,0 +1,6 @@
+Course name: OOP, ID: 1
+Student name: TRONG,ID: 449,Mark: 16.0
+Student name: LONG,ID: 888,Mark: 17.0
+Course name: ADS, ID: 2
+Student name: TRONG,ID: 449,Mark: 19.0
+Student name: LONG,ID: 888,Mark: 20.0
