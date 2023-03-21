@@ -1,0 +1,2 @@
+Course name: ADS,ID: A01,Credit: 3
+Course name: OOP,ID: A02,Credit: 4

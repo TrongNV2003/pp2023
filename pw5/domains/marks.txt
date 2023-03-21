@@ -1,0 +1,2 @@
+Course name: ads, ID: 1
+Student name: trong,ID: 449,Mark: 10.0
